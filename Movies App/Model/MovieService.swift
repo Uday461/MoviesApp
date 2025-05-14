@@ -23,9 +23,9 @@ protocol MovieServiceProtocol {
 }
 
 class MovieService: MovieServiceProtocol {
-    private let networkManager: NetworkManagerProtocol
+    var networkManager: NetworkManagerProtocol
     
-    init(networkManager: NetworkManagerProtocol) {
+    init() {
         self.networkManager = NetworkManager()
     }
     

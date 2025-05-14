@@ -18,11 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = scene as? UIWindowScene else { return }
         
-        let networkManager = NetworkManager()
-        let movieService = MovieService(networkManager: networkManager)
-        let imageService = ImageService(networkManager: networkManager)
-        let movieManager = MovieManager(movieService: movieService, imageService: imageService)
-        viewModel = MoviesViewModel(movieManager: movieManager)
+        viewModel = MoviesViewModel()
         
         if let viewModel = viewModel {
             let mainTabBarController = MainTabBarController(viewModel: viewModel)

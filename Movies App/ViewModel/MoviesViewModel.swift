@@ -34,6 +34,12 @@ class MoviesViewModel: MoviesViewModelProtocol {
     private var movieImage: UIImage? = nil
     private var workItem: DispatchWorkItem? = nil
         
+    var movieManager: MovieManager
+    
+    public init() {
+        self.movieManager = MovieManager(movieService: MovieService(), imageService: ImageService())
+    }
+    
     //Property Observers: ViewModel storing UI state
     private var nowPlayingMovies: [Movie] = [] {
         didSet {
@@ -59,12 +65,6 @@ class MoviesViewModel: MoviesViewModelProtocol {
         }
     }
         
-    private var movieManager:  MovieManager
-    
-    public init(movieManager: MovieManager) {
-        self.movieManager = movieManager
-    }
-    
     func fetchNowPlayingMovies(page: Int) {
         movieManager.fetchMovies(movieType: .nowPlaying, page: page) { [weak self] result in
             guard let self = self else { return }

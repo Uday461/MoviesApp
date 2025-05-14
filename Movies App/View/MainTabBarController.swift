@@ -49,7 +49,7 @@ class MainTabBarController: UITabBarController {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white] //set large title color
         homeNavController.navigationBar.standardAppearance = navBarAppearance
         homeNavController.navigationBar.scrollEdgeAppearance = navBarAppearance
-        homeNavController.navigationBar.compactAppearance = navBarAppearance //for iphone small devices
+        homeNavController.navigationBar.compactAppearance = navBarAppearance
         
         bookmarkedNavController.navigationBar.standardAppearance = navBarAppearance
         bookmarkedNavController.navigationBar.scrollEdgeAppearance = navBarAppearance

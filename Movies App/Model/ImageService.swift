@@ -23,11 +23,11 @@ private class CacheEntry {
 }
 
 class ImageService: ImageServiceProtocol {
-    private let networkManager: NetworkManagerProtocol
     private let cache = NSCache<NSString, CacheEntry>()
     private let cacheTimeLimit = 5 * 60  // 5 minutes
-    
-    init(networkManager: NetworkManagerProtocol) {
+    var networkManager: NetworkManagerProtocol
+
+    init() {
         self.networkManager = NetworkManager()
     }
     
@@ -90,6 +90,7 @@ class ImageService: ImageServiceProtocol {
         }
     }
     
+    //Cache and Persist Image
     func saveImage(movie: Movie, data: Data) {
         guard let uiImage = UIImage(data: data) else {
             return

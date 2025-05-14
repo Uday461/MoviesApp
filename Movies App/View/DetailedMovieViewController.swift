@@ -6,12 +6,6 @@
 //
 
 import UIKit
-//TODO: -
-//Code Clean Up: Use viewmodels for storing UI state & Breaking MovieManager class into different classes.
-//Pagination
-// Detailed VC
-//BookMarked VC
-//
 
 class DetailedMovieViewController: UIViewController {
     var movie: Movie? = nil
